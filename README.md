@@ -2,6 +2,12 @@
   <img src="fg005_corda_b.png" alt="Corda" width="500">
 </p>
 
+# CorDapp Template - Java - Tutorial Edition
+
+This is my copy of the cordapp-template-java that I've been using for working through the tutes. This repo. is essentially just a backup of my work. But hey, if someone else finds it useful, then: great!
+
+Original documentation below.
+
 # CorDapp Template - Java
 
 Welcome to the Java CorDapp template. The CorDapp template is a stubbed-out CorDapp that you can use to bootstrap 
