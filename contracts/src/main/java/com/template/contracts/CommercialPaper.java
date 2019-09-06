@@ -11,9 +11,7 @@ import net.corda.core.transactions.LedgerTransaction;
 import net.corda.core.transactions.TransactionBuilder;
 import net.corda.finance.workflows.asset.CashUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.time.Instant;
 import java.util.Currency;
 import java.util.List;
@@ -127,7 +125,7 @@ public class CommercialPaper implements Contract {
         tx.addCommand(new Command<CommandData>(new Commands.Redeem(), paper.getState().getData().getOwner().getOwningKey()));
     }
 
-    public class State implements OwnableState {
+    public static class State implements OwnableState {
 
         private PartyAndReference issuance;
         private AbstractParty owner;
@@ -150,6 +148,10 @@ public class CommercialPaper implements Contract {
 
         public State withoutOwner() {
             return new State(this.issuance, new AnonymousParty(NullKeys.NullPublicKey.INSTANCE), this.faceValue, this.maturityDate);
+        }
+
+        public State withOwner(@NotNull AbstractParty owner) {
+            return new State(this.issuance, owner, this.faceValue, this.maturityDate);
         }
 
         @NotNull

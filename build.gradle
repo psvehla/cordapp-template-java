@@ -42,6 +42,13 @@ allprojects {
         options.compilerArgs << "-parameters" // Required by Corda's serialisation framework.
     }
 
+    tasks.withType(Test) {
+        test {
+            jvmArgs '-ea'
+            jvmArgs '-javaagent:../lib/quasar.jar'
+        }
+    }
+
     jar {
         // This makes the JAR's SHA-256 hash repeatable.
         preserveFileTimestamps = false

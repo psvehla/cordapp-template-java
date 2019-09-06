@@ -19,4 +19,5 @@ dependencies {
     testCompile "$corda_release_group:corda-node-driver:$corda_release_version"
 
     cordaCompile "$corda_release_group:corda-finance-contracts:$corda_release_version"
+    cordaCompile "$corda_release_group:corda-finance-workflows:$corda_release_version"
 }
