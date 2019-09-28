@@ -25,7 +25,7 @@ import static net.corda.finance.contracts.utils.StateSumming.sumCashBy;
 
 public class DummyContract implements Contract {
 
-    public static final String CP_CONTRACT_ID = "com.template.contracts.DummyContract";
+    public static final String DUMMY_CONTRACT_ID = "com.template.contracts.DummyContract";
 
     @Override
     public void verify(@NotNull LedgerTransaction tx) throws IllegalArgumentException {

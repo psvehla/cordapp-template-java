@@ -11,7 +11,7 @@
     <module name="com.template.clients.main" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.template.webserver.*" />
+        <option name="PATTERN" value="com.template.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
