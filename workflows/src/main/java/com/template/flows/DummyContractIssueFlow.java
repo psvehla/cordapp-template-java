@@ -13,6 +13,8 @@ import net.corda.core.transactions.TransactionBuilder;
 import net.corda.core.utilities.ProgressTracker;
 import org.jetbrains.annotations.NotNull;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,6 +50,7 @@ public class DummyContractIssueFlow {
 
             final TransactionBuilder txBuilder = new TransactionBuilder(notary);
             txBuilder.addOutputState(this.state, DummyContract.DUMMY_CONTRACT_ID);
+            txBuilder.setTimeWindow(Instant.now(), Duration.ofDays(2));
             txBuilder.addCommand(issueCommand);
             txBuilder.verify(getServiceHub());
             final SignedTransaction ptx = getServiceHub().signInitialTransaction(txBuilder);
